@@ -299,7 +299,7 @@
   .graphics-card.wide{ grid-column:span 2; grid-row:span 2; }
   .graphics-caption{
     position:absolute; left:0; right:0; bottom:0;
-    padding:16px 18px;
+    padding:20px 18px;
     background:linear-gradient(0deg, rgba(0,0,0,0.75), transparent);
   }
   .graphics-caption .tag{
@@ -321,6 +321,21 @@
     .graphics-grid{ grid-template-columns:1fr; }
     .graphics-card.wide{ grid-column:span 1; }
   }
+
+  .card-grid{
+  grid-auto-rows:auto;
+  grid-template-rows:none;
+}
+.card-grid .graphics-card{
+  aspect-ratio: 3 / 4;
+  height:auto;
+}
+.card-grid .graphics-card img{
+  width:100%; height:100%; object-fit:contain;
+  background:var(--surface);
+}
+@media(max-width:900px){ .card-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:560px){ .card-grid{ grid-template-columns:1fr; } }
 
   /* PROCESS */
   .process-list{ display:flex; flex-direction:column; }
@@ -587,6 +602,46 @@
     </div>
   </section>
 
+<section id="cards">
+  <div class="section-head reveal">
+    <div class="eyebrow">Так же карточки товаров для маркетплейсов</div>
+    <h2 class="display">Дизайны Карточек</h2>
+  </div>
+
+  <div class="graphics-grid card-grid">
+    <div class="graphics-card reveal">
+      <img src="img/case-card.png" alt="Карточка Чехол">
+      <div class="graphics-caption">
+        <span class="tag">Карточка</span>
+        <h3 class="display">Чехол для телефона</h3>
+      </div>
+    </div>
+
+    <div class="graphics-card reveal">
+      <img src="img/trimmer-card.jpg" alt="Карточка Триммер">
+      <div class="graphics-caption">
+        <span class="tag">Карточка</span>
+        <h3 class="display">Триммер</h3>
+      </div>
+    </div>
+
+    <div class="graphics-card reveal">
+      <img src="img/microfone-card.jpg" alt="Карточка Микрофон">
+      <div class="graphics-caption">
+        <span class="tag">Карточка</span>
+        <h3 class="display">Микрофон</h3>
+      </div>
+    </div>
+
+    <div class="graphics-card reveal">
+      <img src="img/gamepad-card.jpg" alt="Карточка Геймпад">
+      <div class="graphics-caption">
+        <span class="tag">Карточка</span>
+        <h3 class="display">Геймпад</h3>
+      </div>
+    </div>
+  </div>
+</section>
   <!-- PROCESS -->
   <section id="process">
     <div class="section-head reveal">
