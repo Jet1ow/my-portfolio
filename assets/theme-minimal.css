@@ -1,0 +1,44 @@
+/* Minimalist theme overlay — desaturates the accent system to grayscale and
+   strips decorative chrome (pill backgrounds, color glows) without touching
+   the compiled base stylesheet. Loaded after index-UrZ6V4_L.css. */
+
+:root{
+  --accent: #e7e7ec;
+  --accent-soft: #c9cad2;
+  --warm: #83858f;
+}
+
+/* Flatten hardcoded accent-tinted fills that don't reference the variables above */
+.noise-bg{
+  background-image: radial-gradient(circle at 20% 10%, rgba(255,255,255,.05), transparent 45%);
+}
+
+.eyebrow{
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--muted);
+}
+
+.logo-dot{
+  box-shadow: 0 0 8px rgba(255,255,255,.5);
+}
+
+.btn-primary:hover{
+  box-shadow: 0 8px 20px rgba(0,0,0,.4);
+}
+
+.badge-live,
+.badge-progress{
+  background: none;
+  padding: 0;
+}
+
+.cursor-ring--active{
+  background: rgba(255,255,255,.06);
+}
+
+/* The 3D lanyard card stays interactive, just rendered in grayscale to match */
+.stack-stage canvas{
+  filter: grayscale(1) contrast(.92) brightness(1.05);
+}
